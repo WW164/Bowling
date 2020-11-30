@@ -1146,6 +1146,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54078836730213202, guid: 36b4909f3577dfb4bae9ad5fdfe1b731,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 54246538840739924, guid: 36b4909f3577dfb4bae9ad5fdfe1b731,
         type: 3}
       propertyPath: m_UseGravity
@@ -2021,6 +2026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 0.1
   speed: 16
+  minX: -1
+  maxX: 1
 --- !u!1001 &1778989554
 PrefabInstance:
   m_ObjectHideFlags: 0

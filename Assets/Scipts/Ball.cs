@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
 
     private Rigidbody myBody;
     private bool thrown = false;
+    private Vector3 ballPos;
 
     public float horizontalSpeed;
     public float speed;
+    public float minX;
+    public float maxX;
 
     // Start is called before the first frame update
     void Start()
     {
 
         myBody = GetComponent<Rigidbody>();
+        ballPos = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 
     }
 
@@ -39,6 +44,9 @@ public class Ball : MonoBehaviour
             position.x += xAxis * horizontalSpeed;
             transform.position = position;
 
+            ballPos.x = Mathf.Clamp(xAxis, minX, maxX);
+            transform.localPosition = ballPos;
+
         }
 
         if(!thrown && Input.GetKeyDown(KeyCode.Space))
@@ -50,5 +58,12 @@ public class Ball : MonoBehaviour
 
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (thrown && myBody.IsSleeping())
+            SceneManager.LoadScene(0);
     }
 }
