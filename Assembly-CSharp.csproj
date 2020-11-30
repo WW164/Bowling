@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scipts\Ball.cs" />
+    <Compile Include="Assets\Scipts\Camera.cs" />
     <Reference Include="UnityEngine">
       <HintPath>I:/programs/unity/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
